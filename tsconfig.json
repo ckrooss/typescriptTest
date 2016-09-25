@@ -1,9 +1,16 @@
 {
+    "compileOnSave": true,
     "compilerOptions": {
         "module": "commonjs",
-        "target": "es5",
-        "noImplicitAny": false,
+        "target": "es2015",
+        "noImplicitAny": true,
         "sourceMap": true,
-        "outDir": "out"
-    }
+        "removeComments": true,
+        "outDir": "out",
+        "noImplicitReturns": true,
+        "allowUnreachableCode": false
+    },
+    "exclude": [
+        "node_modules"
+    ]
 }
