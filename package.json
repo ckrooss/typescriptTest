@@ -2,11 +2,11 @@
   "name": "typescript-test",
   "version": "1.0.0",
   "description": "Testing typescript",
-  "main": "out/index.js",
+  "main": "out/src/index.js",
   "scripts": {
     "compile": "node ./node_modules/vscode/bin/compile -watch -p ./",
     "prestart": "tsc",
-    "start": "node out/index.js",
+    "start": "node out/src/index.js",
     "pretest": "tsc",
     "test": "mocha ./out/test"
   },
