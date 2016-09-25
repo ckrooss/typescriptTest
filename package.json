@@ -1,0 +1,21 @@
+{
+  "name": "typescript-test",
+  "version": "1.0.0",
+  "description": "Testing typescript",
+  "main": "out/index.js",
+  "scripts": {
+    "vscode:prepublish": "node ./node_modules/vscode/bin/compile",
+    "test": "mocha",
+    "compile": "node ./node_modules/vscode/bin/compile -watch -p ./"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "mocha": "^3.0.2",
+    "typescript": "^2.0.3",
+    "vscode": "^0.11.18"
+  },
+  "engines": {
+    "vscode": "^1.5.0"
+  }
+}
