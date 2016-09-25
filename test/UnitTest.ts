@@ -1,9 +1,10 @@
 import adder from '../src/index';
-var mocha = require('mocha').assert
+var expect = require('chai').expect;
 
 describe('The Adder functionality', () => {
     it('should add two numbers together', () => {
         var result: number = adder(2, 3);
-        mocha.assert(result).equals(5);
+
+        expect(5).to.be.a('number').equal(5);
     });
 });

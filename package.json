@@ -7,11 +7,12 @@
     "vscode:prepublish": "node ./node_modules/vscode/bin/compile",
     "compile": "node ./node_modules/vscode/bin/compile -watch -p ./",
     "pretest": "tsc",
-    "test": "mocha ./out"
+    "test": "mocha ./out/test"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "chai": "^3.5.0",
     "mocha": "^3.0.2",
     "typescript": "^2.0.3",
     "vscode": "^0.11.18"
