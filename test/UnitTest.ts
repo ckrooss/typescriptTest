@@ -5,7 +5,7 @@ describe('The Adder functionality', () => {
     it('should add two numbers of same unit together', () => {
         var temp1 = new unit.Temperature(12);
         var temp2 = new unit.Temperature(24);
-        var result: unit.Temperature = unit.addUnitVars(temp1, temp2);
+        var result: unit.Temperature = temp1.add(temp2);
 
         expect(result).to.have.a.property('value').that.equals(36);
     });
@@ -14,6 +14,6 @@ describe('The Adder functionality', () => {
         var length = new unit.Length(12);
         var temperature = new unit.Temperature(36);
 
-        expect(() => {unit.addUnitVars(length, temperature)}).to.throw(TypeError);
+        expect(() => {return length.add(temperature);}).to.throw(TypeError);
     });
 });

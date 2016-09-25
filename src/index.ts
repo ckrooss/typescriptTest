@@ -3,7 +3,21 @@ var fs = require('fs');
 abstract class UnitVar {
     value: number;
     unit: string;
+    add: <T extends UnitVar>(other: T) => UnitVar;
+    subtract: <T extends UnitVar>(other: T) => UnitVar;
     constructor(value: number) {this.value = value;}
+}
+
+UnitVar.prototype.add = function<T extends UnitVar> (other: T): UnitVar {
+    if(other.unit !== this.unit) throw TypeError('Parameters do not match in unit, got ' + this.unit + ' and ' + other.unit);
+    this.value += other.value;
+    return this;
+}
+
+UnitVar.prototype.subtract = function<T extends UnitVar> (other: T): UnitVar {
+    if(other.unit !== this.unit) throw TypeError('Parameters do not match in unit, got ' + this.unit + ' and ' + other.unit);
+    this.value -= other.value;
+    return this;
 }
 
 class Temperature extends UnitVar {
@@ -18,9 +32,4 @@ class Length extends UnitVar {
     constructor(value: number) { super(value); }
 }
 
-function addUnitVars(a:UnitVar, b:UnitVar):UnitVar {
-    if(a.unit !== b.unit) throw TypeError('Parameters do not match in unit, got ' + a.unit + ' and ' + b.unit);
-    return Object.create(a.constructor, Object({value: {value: a.value + b.value}}));
-}
-
-export {Length, Temperature, addUnitVars};
+export {Length, Temperature};

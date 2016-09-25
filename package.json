@@ -8,12 +8,14 @@
     "prestart": "tsc",
     "start": "node out/src/index.js",
     "pretest": "tsc",
-    "test": "mocha ./out/test"
+    "test": "mocha ./out/test",
+    "cover": "istanbul cover _mocha ./out/test"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
     "chai": "^3.5.0",
+    "istanbul": "^0.4.5",
     "mocha": "^3.0.2",
     "typescript": "^2.0.3",
     "vscode": "^0.11.18"
