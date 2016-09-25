@@ -1,9 +1,9 @@
 var fs = require('fs');
 
-class UnitVar {
+abstract class UnitVar {
     value: number;
     unit: string;
-    constructor(value: number) { this.value = value; }
+    constructor(value: number) {this.value = value;}
 }
 
 class Temperature extends UnitVar {
@@ -20,7 +20,7 @@ class Length extends UnitVar {
 
 function addUnitVars(a:UnitVar, b:UnitVar):UnitVar {
     if(a.unit !== b.unit) throw TypeError('Parameters do not match in unit, got ' + a.unit + ' and ' + b.unit);
-    return {value: a.value + b.value, unit: a.unit};
+    return Object.create(a.constructor, Object({value: {value: a.value + b.value}}));
 }
 
 export {Length, Temperature, addUnitVars};
