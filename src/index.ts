@@ -5,4 +5,4 @@ function add(a:number, b:number):number {
     c = a + b;
     return c;
 }
-console.log(add(1, "b"));
+console.log(add(1, 2));
